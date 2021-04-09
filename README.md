@@ -2,6 +2,8 @@
 
 Participated in an agile team of four to create an application that fetches a third party API that allows users to book and purchase flights/hotels/cars.
 
+Original repo with team: https://github.com/hatchways/team-angelfish
+
 # Authors
 
 Built by [Ray](https://github.com/BoomBoomRay), [Shay](https://github.com/newCodeWriter), [Sebastian](https://github.com/gbudjeakp), [Tojonirina](https://github.com/Tojonirina4)
