@@ -9,7 +9,7 @@ const User = require("../models/User");
 const {
   getFlightObj,
   getHotelObj,
-  getCarObject,
+  getCarObject
 } = require("../services/itinerary");
 
 const makePayment = async (req, res) => {
@@ -25,13 +25,13 @@ const makePayment = async (req, res) => {
       name: flights.departure
         ? `${flights.departure} - ${flights.arrival}`
         : "No flights selected",
-      quantity: 1,
+      quantity: 1
     },
     {
       currency: currency,
       amount: hotels.totalPrice * 100,
       name: hotels.details ? `${hotels.details}` : "No hotels selected",
-      quantity: 1,
+      quantity: 1
     },
     {
       currency: currency,
@@ -39,14 +39,14 @@ const makePayment = async (req, res) => {
       name: rentalCars.details
         ? `${rentalCars.details}`
         : "No rental cars selected",
-      quantity: 1,
-    },
+      quantity: 1
+    }
   ];
 
   if (customer) {
     session = await stripe.checkout.sessions.create({
       payment_intent_data: {
-        setup_future_usage: "off_session",
+        setup_future_usage: "off_session"
       },
 
       /* Note: Customer can change email in form if using key 'customer'. No fix that I could find
@@ -56,8 +56,8 @@ const makePayment = async (req, res) => {
       payment_method_types: ["card"],
       line_items: lineItems,
       mode: "payment",
-      success_url: "https://aqueous-cove-81713.herokuapp.com/payment-success",
-      cancel_url: "https://aqueous-cove-81713.herokuapp.com/payment-error",
+      success_url: "https://fast-retreat-22219.herokuapp.com/payment-success",
+      cancel_url: "https://fast-retreat-22219.herokuapp.com/payment-error"
     });
 
     res.json({ id: session.id });
@@ -66,8 +66,8 @@ const makePayment = async (req, res) => {
       payment_method_types: ["card"],
       line_items: lineItems,
       mode: "payment",
-      success_url: "https://aqueous-cove-81713.herokuapp.com/payment-success",
-      cancel_url: "https://aqueous-cove-81713.herokuapp.com/payment-error",
+      success_url: "https://fast-retreat-22219.herokuapp.com/payment-success",
+      cancel_url: "https://fast-retreat-22219.herokuapp.com/payment-error"
     });
 
     res.json({ id: session.id });
@@ -90,7 +90,7 @@ const createItinerary = async (req, res) => {
         date: departureDate,
         car: rentalCar.length > 0 ? carObj : {},
         flight: flights.length > 0 ? flightsObj : {},
-        hotel: hotels.length > 0 ? hotelObj : {},
+        hotel: hotels.length > 0 ? hotelObj : {}
       });
       newItinerary.save().then((createdItin) => {
         if (createdItin) {
