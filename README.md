@@ -2,6 +2,8 @@
 
 Participated in an agile team of four to create an application that fetches a third party API that allows users to book and purchase flights/hotels/cars.
 
+Checkout it out live: https://fast-retreat-22219.herokuapp.com/explore
+
 Original repo with team: https://github.com/hatchways/team-angelfish
 
 # Authors
