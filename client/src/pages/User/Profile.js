@@ -173,7 +173,7 @@ function Profile() {
               ))}
             </ul>
           </Grid>
-          <Grid item>
+          {/* <Grid item>
             <Button
               className={classes.logoutBtn}
               onClick={handleLogout}
@@ -181,7 +181,7 @@ function Profile() {
             >
               Log out
             </Button>
-          </Grid>
+          </Grid> */}
         </Drawer>
       </Grid>
       <Grid item xs={12} sm={8} lg={9} className={classes.tripContainer}>
